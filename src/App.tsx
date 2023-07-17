@@ -89,7 +89,6 @@ function App() {
               theme={mode === 'dark' ? 'dark' : 'light'}
               buttonVariant="outline"
               backgroundMask={backgroundMask}
-              icon={icon}
               modalType={modalType}
             >
               <Button
