@@ -11,8 +11,6 @@ import Button from './components/Modal/Variants/components/ButtonVariants/Button
 import Toggle from './components/Factory/Toggle/Toggle-index'
 
 
-
-
 type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'outline' | 'solid' | 'text';
 type Color = 'emerald' | 'red' | 'blue' | 'yellow' | 'purple' | 'pink' | 'indigo' | 'green' | 'gray';
 type ModalType = 'agree' | 'continue'
@@ -47,6 +45,7 @@ function App() {
 
           <h1 className="self-center pb-4 text-4xl font-bold">Modal & Button Factory</h1>
 
+          {/* Color configuration */}
           <ColorPicker color={color} setColor={setColor} />
           <ColorSpectrum></ColorSpectrum>
 
@@ -59,7 +58,6 @@ function App() {
           <label className="text-primary-500">Button Text</label>
           <input type="text" value={buttonText} onChange={e => setButtonText(e.target.value)} placeholder="Button Text" className="p-4 text-gray-900 border rounded-md border-m border-primary-300" />
 
-
           <Toggle label="Accessible Focus Lock" onToggle={() => setFocusLock(!focusLock)} />
           <Toggle label="Background Mask" onToggle={() => setBackgroundMask(!backgroundMask)} />
           <Toggle label="Icon" onToggle={() => setIcon(!icon)} />
@@ -69,7 +67,7 @@ function App() {
 
 
 
-          <div className='flex flex-wrap items-center justify-center gap-2 mt-8'>
+          <div aria-label='theme-color-picker' className='flex flex-wrap items-center justify-center gap-2 mt-8'>
             <Button
               onClick={toggleMode}
               variant={mode === 'dark' ? 'light' : 'dark'}
@@ -78,7 +76,7 @@ function App() {
             </Button>
           </div>
 
-          <h1 className="self-center pb-4 text-4xl font-bold">Modal Preview</h1>
+          <h1 aria-label='Modal-title' className="self-center pb-4 text-4xl font-bold">Modal Preview</h1>
 
           <div className="w-[100%] flex  items-center justify-center">
             <Modal

@@ -27,6 +27,7 @@ const ColorPicker: React.FC<ColorPickerProps> = ({ color, setColor, textColor, m
           id='color'
           value={color}
           className={clsx(
+            'text-primary-400',
             'block max-w-xs rounded',
             textColor,
             mode === 'dark'
