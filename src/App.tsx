@@ -9,8 +9,13 @@ import Textarea from './components/Factory/TextArea/TextArea-index'
 import Modal from './components/Modal/Modal-index'
 import Button from './components/Modal/Variants/components/ButtonVariants/Button'
 import Toggle from './components/Factory/Toggle/Toggle-index'
-import ButtonVariantsList from './components/Modal/Variants/components/ButtonVariants/Button.type'
 
+
+
+
+type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'outline' | 'solid' | 'text';
+type Color = 'emerald' | 'red' | 'blue' | 'yellow' | 'purple' | 'pink' | 'indigo' | 'green' | 'gray';
+type ModalType = 'agree' | 'continue'
 
 function App() {
 
@@ -19,7 +24,7 @@ function App() {
   const [mode, setMode] = React.useState<'dark' | 'light'>('light');
   const [color, setColor] = React.useState<Color>('emerald');
   const [buttonVariant, setButtonVariant] = React.useState<ButtonVariant>('primary');
-  const [backgroundMask, setBackgroundMask] = React.useState<Boolean>(false);
+  const [backgroundMask, setBackgroundMask] = React.useState<boolean>(false);
   const [icon, setIcon] = React.useState<boolean>(false);
   const [focusLock, setFocusLock] = React.useState<boolean>(false);
   const [modalType, setModalType] = React.useState<ModalType>('agree');
@@ -39,31 +44,32 @@ function App() {
         <div className="flex flex-col gap-4 " >
 
 
-          <div className='space-y-2'>
-            <ColorPicker color={color} setColor={setColor} />
-            <ColorSpectrum></ColorSpectrum>
 
-          </div>
+          <h1 className="self-center pb-4 text-4xl font-bold">Modal & Button Factory</h1>
+
+          <ColorPicker color={color} setColor={setColor} />
+          <ColorSpectrum></ColorSpectrum>
+
           {/* Text configuration */}
 
-          <label className="text-primary-500">Title</label>
-          <input type="text" value={modalTitle} onChange={e => setModalTitle(e.target.value)} placeholder="Modal Title" className="border border-m p-4 rounded-md border-primary-300 text-gray-900" />
+          <label className="text-primary-500">Modal Title</label>
+          <input type="text" value={modalTitle} onChange={e => setModalTitle(e.target.value)} placeholder="Modal Title" className="p-4 text-gray-900 border rounded-md border-m border-primary-300" />
           <Textarea label="Your message" value={modalBody} onTextChange={setModalBody} placeholder="Leave a comment..." />
 
           <label className="text-primary-500">Button Text</label>
-          <input type="text" value={buttonText} onChange={e => setButtonText(e.target.value)} placeholder="Button Text" className="border border-m p-4 rounded-md border-primary-300 text-gray-900" />
+          <input type="text" value={buttonText} onChange={e => setButtonText(e.target.value)} placeholder="Button Text" className="p-4 text-gray-900 border rounded-md border-m border-primary-300" />
 
 
           <Toggle label="Accessible Focus Lock" onToggle={() => setFocusLock(!focusLock)} />
           <Toggle label="Background Mask" onToggle={() => setBackgroundMask(!backgroundMask)} />
           <Toggle label="Icon" onToggle={() => setIcon(!icon)} />
 
-          <RadioGroup value={buttonVariant} onValueChange={setButtonVariant} textColor={textColor} options = "buttonVariantList" mode={mode}></RadioGroup>
-
-
+          <RadioGroup value={buttonVariant} onValueChange={setButtonVariant} textColor={textColor} options="buttonVariantList" mode={mode}></RadioGroup>
           <RadioGroup value={modalType} onValueChange={setModalType} textColor={textColor} mode={mode} options="modalVariantList"></RadioGroup>
 
-          <div className='mt-8 flex flex-wrap gap-2 items-center justify-center'>
+
+
+          <div className='flex flex-wrap items-center justify-center gap-2 mt-8'>
             <Button
               onClick={toggleMode}
               variant={mode === 'dark' ? 'light' : 'dark'}
@@ -72,9 +78,10 @@ function App() {
             </Button>
           </div>
 
+          <h1 className="self-center pb-4 text-4xl font-bold">Modal Preview</h1>
+
           <div className="w-[100%] flex  items-center justify-center">
             <Modal
-              modalType="agree"
               focusLock={focusLock}
               title={modalTitle}
               body={modalBody}
@@ -98,7 +105,6 @@ function App() {
 
 
           <CodeOutput
-            modalType="agree"
             focusLock={focusLock}
             title={modalTitle}
             backgroundMask={backgroundMask}

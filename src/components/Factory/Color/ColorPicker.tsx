@@ -4,10 +4,10 @@ import colorList from './ColorList';
 
 interface ColorPickerProps {
   color: string;
-  colorList: string[];
-  setColor: (color: string) => void;
-  textColor: string;
-  mode: string;
+  colorList?: string[];
+  setColor?: (color: string) => void;
+  textColor?: string;
+  mode?: string;
 }
 
 const ColorPicker: React.FC<ColorPickerProps> = ({ color, setColor, textColor, mode }) => {

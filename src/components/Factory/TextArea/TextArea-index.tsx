@@ -34,7 +34,7 @@ const Textarea: React.FC<TextareaProps> = ({ label, value, onTextChange, placeho
 
   return (
     <div className="flex flex-col">
-      <label htmlFor="message" className="block mb-2 text-sm font-medium text-primary-400 ">
+      <label htmlFor="message" className="block mb-2 text-primary-400 ">
         {label}
       </label>
       <textarea

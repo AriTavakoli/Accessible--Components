@@ -5,7 +5,7 @@ interface RadioGroupProps {
   label: string;
   value: string;
   options: string[];
-  onValueChange: (value: string) => void;
+  onValueChange: () => void;
 }
 
 const RadioGroup: React.FC<RadioGroupProps> = ({ label, value, options, onValueChange }) => {
@@ -26,8 +26,6 @@ const RadioGroup: React.FC<RadioGroupProps> = ({ label, value, options, onValueC
       'continue',
     ],
   }
-
-
 
 
   return (

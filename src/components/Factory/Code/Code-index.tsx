@@ -8,6 +8,7 @@ interface CodeOutputProps {
   modalType: string,
   focusLock: boolean,
   title: string,
+  icon : boolean,
   body: string,
   onClose: () => void,
   onAccept: () => void,
