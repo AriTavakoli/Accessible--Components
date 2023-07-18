@@ -20,7 +20,6 @@ interface ModalProps {
 }
 
 function ModalBody(props: ModalProps) {
-  const { modalType, ...otherProps } = props;
 
   // Create a components mapping
   const ComponentsMap = {

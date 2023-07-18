@@ -9,7 +9,9 @@ import Textarea from './components/Factory/TextArea/TextArea-index'
 import Modal from './components/Modal/Modal-index'
 import Button from './components/Modal/Variants/components/ButtonVariants/Button'
 import Toggle from './components/Factory/Toggle/Toggle-index'
-
+import Card from './components/Card/Card-index'
+import testImage from './assets/image-1.jpg'
+import testImage2 from './assets/image-4.jpg'
 
 type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'outline' | 'solid' | 'text';
 type Color = 'emerald' | 'red' | 'blue' | 'yellow' | 'purple' | 'pink' | 'indigo' | 'green' | 'gray';
@@ -36,9 +38,28 @@ function App() {
 
   return (
     <>
+
       <section
         className={clsx(mode === 'dark' ? 'bg-dark' : 'bg-white', color, 'flex flex-col w-[100vw] items-center h-[200vh] justify-start pt-[10vh]', textColor)}
       >
+        <div className="center-self w-[100%] flex items-center justify-center pt-8">
+
+          {/* Light theme, has image, medium size, square shape, blue button */}
+
+          <Card
+            title="Card Title"
+            content="This is a sample description for the card."
+            imageSrc={testImage2}
+            size = "large"
+            cardType = "imageCard"
+          />
+
+
+
+
+
+        </div>
+
         <div className="flex flex-col gap-4 " >
 
 
