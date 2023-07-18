@@ -38,7 +38,7 @@ function App() {
 
   return (
     <>
-
+{/*  */}
       <section
         className={clsx(mode === 'dark' ? 'bg-dark' : 'bg-white', color, 'flex flex-col w-[100vw] items-center h-[200vh] justify-start pt-[10vh]', textColor)}
       >
