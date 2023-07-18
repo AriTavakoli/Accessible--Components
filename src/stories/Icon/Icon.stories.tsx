@@ -1,20 +1,20 @@
 import React from 'react';
 import Icon from '../../components/IconWrapper/Icon';
+import RippleButton from '../../components/RippleButton/rippleButton-index';
 
 export default {
   title: 'Components/Icon',
   component: Icon,
   argTypes: {
     id: {
-      type: 'select',
-      options: ['XL', 'search', 'ghost', 'light', 'dark'],
+
+        options: ['search', 'XL', 'plus', 'refresh', 'red', 'purple',  'white'],
+        control: { type: 'radio' }
     },
     size: {
       control: 'number',
     },
-    color: {
-      control: 'color',
-    },
+
     padding: {
       control: 'text',
     },
@@ -31,15 +31,15 @@ export default {
   },
 };
 
-const Template = (args) => <Icon {...args} />;
+const Template = (args) => <Icon {...args} />
 
 export const Default = Template.bind({});
 Default.args = {
-  id: ' ',
-  size: 24,
-  color: 'black',
+  id: 'search',
+  size: '24px',
   padding: '4px',
   title: 'Icon Title',
-  transitionId: 'another-icon-id',
+  transitionId: 'check',
   transitionDuration: 2000,
 };
+

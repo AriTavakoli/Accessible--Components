@@ -3,7 +3,6 @@ import Icon from '../../IconWrapper/Icon';
 import './button.scss';
 import classNames from 'classnames';
 import styles from './bubble.module.scss'
-import autoAnimate from '@formkit/auto-animate'
 
 
 

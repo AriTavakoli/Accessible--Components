@@ -72,4 +72,4 @@ const Icon: FunctionComponent<IconProps> = React.memo(({ onClick, id, padding, t
   ) : null;
 });
 
-export default React.memo(Icon);
+export default Icon
