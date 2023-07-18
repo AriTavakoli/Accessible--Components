@@ -42,28 +42,8 @@ function App() {
       <section
         className={clsx(mode === 'dark' ? 'bg-dark' : 'bg-white', color, 'flex flex-col w-[100vw] items-center h-[200vh] justify-start pt-[10vh]', textColor)}
       >
-        <div className="center-self w-[100%] flex items-center justify-center pt-8">
-
-          {/* Light theme, has image, medium size, square shape, blue button */}
-
-          <Card
-            title="Card Title"
-            content="This is a sample description for the card."
-            imageSrc={testImage2}
-            size = "large"
-            cardType = "imageCard"
-          />
-
-
-
-
-
-        </div>
 
         <div className="flex flex-col gap-4 " >
-
-
-
           <h1 className="self-center pb-4 text-4xl font-bold">Modal & Button Factory</h1>
 
           {/* Color configuration */}
