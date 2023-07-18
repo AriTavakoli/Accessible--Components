@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import useOnClickOutside from '../hooks/useonClickOutside';
+import useOnClickOutside from '../hooks/useOnClickOutside';
 import useFocusCycle from '../hooks/useFocusCycle';
 import ModalBody from './Variants/components/ModalVariants/ModalBody-Variants/ModalBody-index';
 
